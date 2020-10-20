@@ -1,8 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-Zkm = np.array([0.0, 0.1 ,0.3, 0.5, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0])
-RH100 = np.array([60.0, 70.0, 80.0, 75.0, 60.0, 50.0, 80.0, 90.0, 60.0, 40.0, 20.0, 5.0, 2.0, 1.0])
+Zkm = np.array([0.0, 0.1, 0.3, 0.5, 1.0, 2.0, 3.0,
+                4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0])
+RH100 = np.array([60.0, 70.0, 80.0, 75.0, 60.0, 50.0, 80.0,
+                  90.0, 60.0, 40.0, 20.0, 5.0, 2.0, 1.0])
 
 
 RH = RH100*0.01
@@ -45,19 +47,19 @@ for i in range(0, len(Zkm)):
     MSE[i] = h[i] + g*Z[i]
     v[i] = v0*(np.exp(Z[i]/Zs)-1)
     TE[i] = MSE[i] + 0.5*(v[i]**2)
-    
-plt.plot(RH, Z, label = "RH")
-plt.plot(Tk,Z, label="Tk")
-plt.plot(P,Z, label="P")
-plt.plot(es,Z, label="es")
-plt.plot(e,Z, label="e")
-plt.plot(q,Z, label="q")
-plt.plot(r,Z, label="r")
-plt.plot(w,Z, label="w")
-plt.plot(h, Z, label = "h")
-plt.plot(MSE, Z, label = "MSE")
-plt.plot(TE, Z, label = "TE")
-plt.plot(v, Z, label = "v")
+
+plt.plot(RH, Z, label="RH")
+plt.plot(Tk, Z, label="Tk")
+plt.plot(P, Z, label="P")
+plt.plot(es, Z, label="es")
+plt.plot(e, Z, label="e")
+plt.plot(q, Z, label="q")
+plt.plot(r, Z, label="r")
+plt.plot(w, Z, label="w")
+plt.plot(h, Z, label="h")
+plt.plot(MSE, Z, label="MSE")
+plt.plot(TE, Z, label="TE")
+plt.plot(v, Z, label="v")
 plt.ylabel("Altitude")
 plt.title("Vert. Profiles")
 plt.axis()

@@ -18,10 +18,10 @@ e = 1.6e-19
 
 a0 = 4*np.pi*epsilon0*hbar**2 / (m_e * e**2)
 
-print (a0)
+print(a0)
 
-#print the resulrt in a formatted w
+# print the resulrt in a formatted w
 "'Ex %8.3 8: 8 digits  , .3  3 decimal numbers e = scientific but f = float'"
 
 
-print ( 'Bohr radius is %0.9e'%(a0) )
+print('Bohr radius is %0.9e' % (a0))
