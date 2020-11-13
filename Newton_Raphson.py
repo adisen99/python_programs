@@ -9,8 +9,7 @@
 # import the necessary libraries
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.interpolate import spline
-from Code2pdf.code2pdf import Code2pdf
+from scipy.interpolate import interp1d
 
 # Define the function prefixes using NumPy
 sin = np.sin
@@ -80,8 +79,8 @@ print(round(a, e))  # Final Solution
 x = np.linspace(-10, 10, 10)
 # Interpolates extra values to make smooth curve
 xnew = np.linspace(x.min(), x.max(), 300)
-f_smooth = spline(x, f(x), xnew)
-df_smooth = spline(x, df(x), xnew)
+f_smooth = interp1d(x, f(x), xnew)
+df_smooth = interp1d(x, df(x), xnew)
 
 # Plot the curves
 fig = plt.figure()
@@ -89,7 +88,6 @@ plt.plot(xnew, f_smooth, 'b', label='function')
 plt.plot(xnew, df_smooth, 'g', label='derivative')
 plt.xlabel('x')
 plt.ylabel('f and df')
-fig.savefig('Newton__Raphson_Exp_2.png')
 fig.suptitle('Function and Derivative')
 plt.legend()
 
